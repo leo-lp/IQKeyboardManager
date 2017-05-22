@@ -1,8 +1,38 @@
 ## master (xx-xx-xxxx)
 
+#### Deprecations and Removed:
+- Deprecated **isAskingCanBecomeFirstResponder** because this no longer useful now.
+- Removed **shouldHidePreviousNext** in favor of **previousNextDisplayMode**.
+
+## 4.0.9 (04-04-2017)
+
 #### Bugfixes:
 
-- Fixed an issue with keyboard long delay on first keyboard appearance.
+- Fixed an issue where **enabledDistanceHandlingClasses** for a class with **enabled=NO** configuration wasn't working well.
+
+#### Features:
+
+- Added **touchResignedGestureIgnoreClasses** property to ignore resigned touches for specific view classes.
+
+#### Improvements:
+
+- Updated to support **Swift 3.1**.
+- Fixed some warnings about deprecations.
+
+#### Documentation:
+
+- Updated README.md documentation.
+
+
+## 4.0.8 (22-12-2016)
+
+#### Bugfixes:
+
+- Fixed an issue with **keyboard long delay on first keyboard appearance**.
+- Disabled library in **UIAlertController**.
+- Fixed an issue where **shouldResignOnTouchOutside** wasn't working with **UITableViewController**.
+- Fixed **isKeyboardShowing** bool value when library is disabled.
+- Fixed an issue where **textField was hiding** when **orientation** occurs with **formSheet or pageSheet** presentation style.
 
 #### Features:
 
@@ -10,8 +40,8 @@
 
 #### Improvements:
 
-- Added ability to detect textField left/right view, if they can also become first responder.
-- Improved delgate callback behaviour with IQKeyboardReturnKeyHandler class.
+- Added ability to **detect textField left/right view**, if they can also become first responder.
+- **Improved delgate callback behaviour** with IQKeyboardReturnKeyHandler class.
 
 #### Deprecations and Removed:
 
@@ -20,6 +50,7 @@
 #### Documentation:
 
 - Added **CHANGELOG.md**.
+- Added **Carthage Documentation** in README.md file.
 
 
 ## 4.0.7 (19-10-2016)

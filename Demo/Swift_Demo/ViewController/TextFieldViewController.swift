@@ -8,6 +8,7 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import IQDropDownTextField
 
 class TextFieldViewController: UIViewController, UITextViewDelegate, UIPopoverPresentationControllerDelegate {
     
@@ -41,7 +42,7 @@ class TextFieldViewController: UIViewController, UITextViewDelegate, UIPopoverPr
         textField3.setCustomDoneTarget(self, action: #selector(self.doneAction(_:)))
         dropDownTextField.keyboardDistanceFromTextField = 150;
         
-        var itemLists = [NSString]()
+        var itemLists = [String]()
         itemLists.append("Zero Line Of Code")
         itemLists.append("No More UIScrollView")
         itemLists.append("No More Subclasses")
@@ -82,14 +83,14 @@ class TextFieldViewController: UIViewController, UITextViewDelegate, UIPopoverPr
             navController.navigationBar.tintColor = self.navigationController?.navigationBar.tintColor
             navController.navigationBar.barTintColor = self.navigationController?.navigationBar.barTintColor
             navController.navigationBar.titleTextAttributes = self.navigationController?.navigationBar.titleTextAttributes
-//            navController.modalTransitionStyle = Int(arc4random()%4)
+            navController.modalTransitionStyle = UIModalTransitionStyle(rawValue: Int(arc4random()%4))!
 
             // TransitionStylePartialCurl can only be presented by FullScreen style.
-//            if (navController.modalTransitionStyle == UIModalTransitionStyle.PartialCurl) {
-//                navController.modalPresentationStyle = UIModalPresentationStyle.FullScreen
-//            } else {
-//                navController.modalPresentationStyle = UIModalPresentationStyle.PageSheet
-//            }
+            if (navController.modalTransitionStyle == UIModalTransitionStyle.partialCurl) {
+                navController.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+            } else {
+                navController.modalPresentationStyle = UIModalPresentationStyle.formSheet
+            }
 
             present(navController, animated: true, completion: nil)
         } else {
